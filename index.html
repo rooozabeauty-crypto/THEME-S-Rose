@@ -2,12 +2,122 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>RX Themes</title>
-</head>
-<body style="background:black; color:white; text-align:center; padding:50px;">
+  <title>RX THEMES</title>
 
-  <h1>🔥 RX THEMES</h1>
-  <p>الموقع شغال بنجاح 😎</p>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: black;
+      color: white;
+      direction: rtl;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background: radial-gradient(circle at center, #1a0000, #000);
+    }
+
+    /* grid effect */
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(rgba(255,0,0,0.1) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,0,0,0.1) 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.2;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 15px;
+      border-radius: 20px;
+      background: rgba(255,0,0,0.2);
+      border: 1px solid rgba(255,0,0,0.4);
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: 60px;
+      margin: 10px 0;
+    }
+
+    h1 span {
+      color: #ff2d2d;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #aaa;
+      line-height: 1.6;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      border-radius: 10px;
+      text-decoration: none;
+      margin: 5px;
+      display: inline-block;
+    }
+
+    .btn.primary {
+      background: #ff2d2d;
+      color: white;
+      box-shadow: 0 0 20px rgba(255,0,0,0.6);
+    }
+
+    .btn.secondary {
+      border: 1px solid #555;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="content">
+
+    <span class="badge">🔥 منصة قوالب متاجر سلة الأولى</span>
+
+    <h1>THEMS-<span>RX</span></h1>
+
+    <h2>قوالب تحول متجرك إلى تجربة لا تُنسى</h2>
+
+    <p>
+      أكثر من 500 قالب احترافي مصمم خصيصًا لمتاجر سلة
+      لزيادة المبيعات وتحسين تجربة المستخدم
+    </p>
+
+    <div class="buttons">
+      <a href="#" class="btn primary">تصفح القوالب</a>
+      <a href="#" class="btn secondary">ربط مع سلة</a>
+    </div>
+
+  </div>
+</section>
 
 </body>
 </html>
