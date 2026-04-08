@@ -13,6 +13,63 @@
       direction: rtl;
     }
 
+    /* ===== HEADER ===== */
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #ff2d2d;
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .browse-btn {
+      background: #ff2d2d;
+      padding: 10px 18px;
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      box-shadow: 0 0 15px rgba(255,0,0,0.6);
+      transition: 0.3s;
+    }
+
+    .browse-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255,0,0,1);
+    }
+
+    .icon {
+      width: 35px;
+      height: 35px;
+      background: #ff2d2d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      font-size: 12px;
+    }
+
+    /* ===== HERO ===== */
     .hero {
       height: 100vh;
       display: flex;
@@ -23,7 +80,6 @@
       background: radial-gradient(circle at center, #1a0000, #000);
     }
 
-    /* grid effect */
     .hero::before {
       content: "";
       position: absolute;
@@ -39,6 +95,7 @@
       position: relative;
       z-index: 2;
       max-width: 700px;
+      animation: fadeUp 1s ease;
     }
 
     .badge {
@@ -85,18 +142,49 @@
     .btn.primary {
       background: #ff2d2d;
       color: white;
-      box-shadow: 0 0 20px rgba(255,0,0,0.6);
+      box-shadow: 0 0 25px rgba(255,0,0,0.8);
+      transition: 0.3s;
+    }
+
+    .btn.primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(255,0,0,1);
     }
 
     .btn.secondary {
       border: 1px solid #555;
       color: #fff;
     }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
   </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+<header class="header">
+
+  <div class="logo">THEMS-<span>RX</span></div>
+
+  <div class="left">
+    <a href="#" class="browse-btn">تصفح القوالب</a>
+    <div class="icon">TX</div>
+  </div>
+
+</header>
+
+<!-- HERO -->
 <section class="hero">
   <div class="content">
 
@@ -107,17 +195,10 @@
     <h2>قوالب تحول متجرك إلى تجربة لا تُنسى</h2>
 
     <p>
-      أكثر من 500 قالب احترافي مصمم خصيصًا لمتاجر سلة
-      لزيادة المبيعات وتحسين تجربة المستخدم
+      أكثر من 500 قالب احترافي مصمم خصيصًا لمتاجر سلة لزيادة المبيعات وتحسين تجربة المستخدم
     </p>
 
     <div class="buttons">
       <a href="#" class="btn primary">تصفح القوالب</a>
       <a href="#" class="btn secondary">ربط مع سلة</a>
-    </div>
-
-  </div>
-</section>
-
-</body>
-</html>
+    </
