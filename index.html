@@ -8,27 +8,25 @@
 <style>
 body {
   margin: 0;
-  font-family: 'Arial';
+  font-family: Arial;
   background: #050505;
   color: white;
-  overflow-x: hidden;
 }
 
-/* خلفية Grid متحركة */
+/* GRID BG */
 body::before {
   content: "";
   position: fixed;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(255,0,0,0.08) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255,0,0,0.08) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(255,0,0,0.07) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,0,0,0.07) 1px, transparent 1px);
   background-size: 40px 40px;
   animation: moveGrid 10s linear infinite;
   z-index: -1;
 }
 
 @keyframes moveGrid {
-  0% { transform: translate(0,0); }
   100% { transform: translate(40px,40px); }
 }
 
@@ -37,33 +35,17 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 20px 40px;
-  align-items: center;
-  animation: fadeDown 1s ease;
 }
 
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-}
+.logo span { color: red; }
 
-.logo span {
-  color: #ff2d2d;
-}
-
-/* BUTTON */
 .btn {
-  background: #ff2d2d;
-  padding: 10px 22px;
+  background: red;
+  padding: 10px 20px;
   border-radius: 10px;
   color: white;
   text-decoration: none;
-  transition: 0.3s;
-  box-shadow: 0 0 15px #ff2d2d88;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px #ff2d2d;
+  box-shadow: 0 0 15px red;
 }
 
 /* HERO */
@@ -73,174 +55,116 @@ header {
 }
 
 .hero h1 {
-  font-size: 65px;
-  margin: 0;
-  animation: fadeUp 1s ease;
+  font-size: 60px;
 }
 
-.hero span {
-  color: #ff2d2d;
+.hero span { color: red; }
+
+/* THEMES */
+.themes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap: 20px;
+  padding: 40px;
 }
 
-.hero p {
-  color: #aaa;
-  margin: 20px 0;
-  animation: fadeUp 1.3s ease;
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
 }
 
-.badge {
-  background: #ff2d2d22;
-  display: inline-block;
-  padding: 8px 18px;
-  border-radius: 30px;
-  margin-bottom: 20px;
-  animation: fadeUp 0.8s ease;
+.card img {
+  width: 100%;
+  transition: 0.5s;
 }
 
-.buttons a {
-  margin: 10px;
-  display: inline-block;
-  animation: fadeUp 1.5s ease;
+.card:hover img {
+  transform: scale(1.1);
 }
 
-.btn-outline {
-  border: 1px solid #555;
-  padding: 10px 22px;
-  border-radius: 10px;
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(transparent, black);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay a {
+  background: red;
+  padding: 8px 15px;
+  border-radius: 5px;
   color: white;
   text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn-outline:hover {
-  background: white;
-  color: black;
 }
 
 /* FOOTER */
 footer {
-  background: #000;
-  padding: 50px 30px;
-  margin-top: 100px;
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.footer h3 {
-  margin-bottom: 10px;
-}
-
-.footer a {
-  color: #aaa;
-  text-decoration: none;
-  display: block;
-  margin: 5px 0;
-}
-
-.footer a:hover {
-  color: white;
+  background: black;
+  padding: 40px;
+  margin-top: 80px;
 }
 
 .footer-bottom {
   text-align: center;
-  margin-top: 30px;
-  color: #777;
+  color: gray;
 }
-
-/* ANIMATIONS */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">THEMS-<span>RX</span></div>
+  <div class="logo">THEMES-<span>RX</span></div>
   <a href="#" class="btn">تصفح القوالب</a>
 </header>
 
 <section class="hero">
- <section class="themes">
-
-  <h2>✨ القوالب المميزة</h2>
-
-  <div class="themes-container">
-
-    <!-- كرت 1 -->
-    <div class="card">
-      <img src="https://via.placeholder.com/300x200" alt="theme">
-      <h3>قالب روزا بيوتي</h3>
-      <p>تصميم أنثوي فاخر لمتاجر التجميل</p>
-      <a href="#" class="btn">عرض القالب</a>
-    </div>
-
-    <!-- كرت 2 -->
-    <div class="card">
-      <img src="https://via.placeholder.com/300x200" alt="theme">
-      <h3>قالب متجر إلكتروني</h3>
-      <p>تصميم احترافي متعدد الاستخدام</p>
-      <a href="#" class="btn">عرض القالب</a>
-    </div>
-
-    <!-- كرت 3 -->
-    <div class="card">
-      <img src="https://via.placeholder.com/300x200" alt="theme">
-      <h3>قالب فخم</h3>
-      <p>تصميم داكن راقي يزيد المبيعات</p>
-      <a href="#" class="btn">عرض القالب</a>
-    </div>
-
-  </div>
-
- </section>
-  <div class="badge">🔥 منصة قوالب متاجر سلة الأولى</div>
-
-  <h1>THEMS-<span>RX</span></h1>
-
-  <p>حوّلي متجرك إلى تجربة فاخرة تزيد المبيعات وتجذب العملاء</p>
-
-  <div class="buttons">
-    <a href="#" class="btn">تصفح القوالب</a>
-    <a href="#" class="btn-outline">ربط مع سلة</a>
-  </div>
+  <h1>THEMES-<span>RX</span></h1>
+  <p>قوالب تحول متجرك إلى تجربة فاخرة</p>
 </section>
 
-<footer class="footer">
-  <div class="footer-container">
-<div>
-  <h3>تواصل</h3>
-  <p>
-    واتساب:
-    <a href="https://wa.me/966508047159" target="_blank">
-      0508047159
-    </a>
-  </p>
-  <p>انستقرام: @rex.themes</p>
-</div>
-    <div>
-      <h3>THEMES RX</h3 
+<section class="themes-container">
+
+  <div class="card">
+    <img src="https://via.placeholder.com/400x300">
+    <div class="overlay">
+      <h3>Rose Beauty</h3>
+      <a href="#">عرض</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/400x300">
+    <div class="overlay">
+      <h3>Luxury Store</h3>
+      <a href="#">عرض</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://roooza-2026.base44.app/400x300">
+    <div class="overlay">
+      <h3>Modern Shop</h3>
+      <a href="#">عرض</a>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <p>واتساب: <a href="https://wa.me/966508047159">0508047159</a></p>
+  <div class="footer-bottom">
+    © 2026 THEMES RX
+  </div>
+</footer>
+
+</body>
+</html>
