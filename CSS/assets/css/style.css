@@ -107,3 +107,48 @@ p {
   border: 1px solid #555;
   color: #fff;
 }
+.products {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.products h2 {
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #111;
+  padding: 20px;
+  border-radius: 15px;
+  width: 250px;
+  transition: 0.3s;
+  border: 1px solid #222;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: #ff2d2d;
+}
+
+.img {
+  height: 150px;
+  background: linear-gradient(45deg, #222, #111);
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin: 10px 0;
+}
+
+.card p {
+  color: #aaa;
+  font-size: 14px;
+}
