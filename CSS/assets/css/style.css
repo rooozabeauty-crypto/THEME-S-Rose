@@ -25,7 +25,20 @@ body {
   background-size: 40px 40px;
   opacity: 0.2;
 }
+.hero-content {
+  animation: fadeUp 1s ease;
+}
 
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .hero-content {
   position: relative;
   z-index: 2;
@@ -78,7 +91,17 @@ p {
   color: white;
   box-shadow: 0 0 20px rgba(255,0,0,0.6);
 }
+.btn.primary {
+  background: #ff2d2d;
+  color: white;
+  box-shadow: 0 0 25px rgba(255,0,0,0.8);
+  transition: 0.3s;
+}
 
+.btn.primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(255,0,0,1);
+}
 .btn.secondary {
   background: transparent;
   border: 1px solid #555;
